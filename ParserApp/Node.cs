@@ -1,4 +1,4 @@
-namespace PrattParser
+namespace ParserApp
 {
     public class Node
     {

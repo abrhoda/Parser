@@ -1,8 +1,8 @@
 
-namespace PrattParser
+namespace ParserApp
 {
 
-    class Parser
+    public class Parser
     {
         // Fields are useful for testing. No real reason to keep these otherwise.
         // public string? Input { get; private set; }
@@ -17,22 +17,6 @@ namespace PrattParser
             _ => throw new Exception($"{op} is not a supported operation. Only +, -, *, and / are supported."),
         };
 
-        /**
-            test cases:
-            1. input is null
-            2. input is blank string
-            3. input is 1 or more operators
-            4. input has invalid characters that arent numbers, d, D, or an operator
-            5. input is "1d4+1"
-            6. input is "1d4+2d54+2"
-            7. input is "1d4+"
-            8. input is "+12-d6*2"
-            9. input is "*"
-            10. input is "1"
-            11. input is "2d"
-            12. input is "(d6" 
-            13. input is "(2d4*2)+1"
-        */
         private List<Token> Tokenize(string input)
         {
             List<Token> acc = new List<Token>();
@@ -259,7 +243,6 @@ namespace PrattParser
             List<Token> tokens = Tokenize(input);
             Node expressionTree = NodeTreeFromTokens(tokens, 0.0);
             PrintExpressionFromTree(expressionTree);
-            Console.WriteLine();
             return EvaluateTree(expressionTree);
         }
     }

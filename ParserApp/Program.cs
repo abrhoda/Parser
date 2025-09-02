@@ -1,4 +1,4 @@
-﻿namespace PrattParser
+﻿namespace ParserApp
 {
     class Program
     {

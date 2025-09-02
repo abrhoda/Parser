@@ -1,6 +1,4 @@
-using System.Data;
-
-namespace PrattParser
+namespace ParserApp
 {
 
     public class Token
@@ -76,7 +74,6 @@ namespace PrattParser
             {
                 result += random.Next(1, size+1);
             }
-            Console.WriteLine($"Rolled {result} for expression {expression}");
             return result;
         }
     }
