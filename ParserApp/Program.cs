@@ -10,17 +10,30 @@
             "d6*(2+3)",
             "9*d6-1/d4"
         };
+
+        // ugly main loop but just wrapping entire main runner in a try/catch
         static void Main(string[] args)
         {
             try
             {
                 Parser parser = new Parser();
-                foreach (string expression in expressions)
+                while (true)
                 {
-                    Console.WriteLine($"Expression: {expression}");
+                    Console.Write("Input expression (or exit)> ");
+                    string? expression = Console.ReadLine();
+                    if (expression == null)
+                    {
+                        throw new Exception("Null/blank expression input.");
+                    }
+
+                    if (expression.Equals("exit"))
+                    {
+                        break;
+                    }
                     int res = parser.Evaluate(expression);
                     Console.WriteLine($"Result: {res}");
                 }
+                Console.WriteLine("Exiting.");
             }
             catch (Exception e)
             {

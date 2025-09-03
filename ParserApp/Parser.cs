@@ -242,7 +242,7 @@ namespace ParserApp
         {
             List<Token> tokens = Tokenize(input);
             Node expressionTree = NodeTreeFromTokens(tokens, 0.0);
-            PrintExpressionFromTree(expressionTree);
+            //PrintExpressionFromTree(expressionTree);
             return EvaluateTree(expressionTree);
         }
     }

@@ -72,7 +72,7 @@ namespace ParserApp
 
             for (int i = 0; i < amount; ++i)
             {
-                result += random.Next(1, size+1);
+                result += random.Next(1, size+1); 
             }
             return result;
         }
