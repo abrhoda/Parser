@@ -219,21 +219,6 @@ namespace ParserApp
         }
 
         /// <summary>
-        /// Standard depth first traversal of a binary tree and prints a preOrder notation of the expression.
-        /// </summary>
-        /// <param name="root">Root node of the expression tree.</param>
-        public void PrintExpressionFromTree(Node? node)
-        {
-            if (node == null)
-            {
-                return;
-            }
-            Console.Write($"{node.Value.Input}");
-            PrintExpressionFromTree(node.Left);
-            PrintExpressionFromTree(node.Right);
-        }
-
-        /// <summary>
         /// Takes a dice expression string and evalutes it to an int.
         /// </summary>
         /// <param name="input"></param>
@@ -242,7 +227,6 @@ namespace ParserApp
         {
             List<Token> tokens = Tokenize(input);
             Node expressionTree = NodeTreeFromTokens(tokens, 0.0);
-            //PrintExpressionFromTree(expressionTree);
             return EvaluateTree(expressionTree);
         }
     }
